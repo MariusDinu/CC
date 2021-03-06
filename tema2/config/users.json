@@ -1,0 +1,18 @@
+{
+    "users": [{
+        "id": 0,
+        "name": "John",
+        "age": 29,
+        "job": "SoftDev"
+    }, {
+        "id": 1,
+        "name": "John",
+        "age": 29,
+        "job": "SoftDev"
+    }, {
+        "id": 2,
+        "name": "John",
+        "age": 29,
+        "job": "SoftDev"
+    }]
+}

@@ -1,224 +1,216 @@
 {
-	"info": {
-		"_postman_id": "e53dcccd-0ff7-4572-953e-9d35eaf8d214",
-		"name": "CC2",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
-	},
-	"item": [
-		{
-			"name": "GET",
-			"item": [
-				{
-					"name": "Users",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": null
-					},
-					"response": []
-				},
-				{
-					"name": "UserID",
-					"request": {
-						"method": "GET",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9000/GET/user/1",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"GET",
-								"user",
-								"1"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "POST",
-			"item": [
-				{
-					"name": "AddUser",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "id",
-									"value": "4",
-									"type": "text"
-								},
-								{
-									"key": "name",
-									"value": "Marius",
-									"type": "text"
-								},
-								{
-									"key": "age",
-									"value": "23",
-									"type": "text"
-								},
-								{
-									"key": "job",
-									"value": "Soft",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:9000/POST/user",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"POST",
-								"user"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Lista",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "urlencoded",
-							"urlencoded": [
-								{
-									"key": "a",
-									"value": "1",
-									"type": "text"
-								}
-							]
-						},
-						"url": {
-							"raw": "http://localhost:9000/POST/user",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"POST",
-								"user"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "PUT",
-			"item": [
-				{
-					"name": "UpdateUser",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9000/PUT/user/42/Dinu",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"PUT",
-								"user",
-								"42",
-								"Dinu"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "UpdateUserJson",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"url": null
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "DELETE",
-			"item": [
-				{
-					"name": "DeleteUserID",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9000/DELETE/user/42",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"DELETE",
-								"user",
-								"42"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "DeleteAll",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "http://localhost:9000/DELETE/users",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "9000",
-							"path": [
-								"DELETE",
-								"users"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
-			"name": "NoPath",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
-		},
-		{
-			"name": "test",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": null
-			},
-			"response": []
-		}
-	]
+    "info": {
+        "_postman_id": "e53dcccd-0ff7-4572-953e-9d35eaf8d214",
+        "name": "CC2",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [{
+            "name": "GET",
+            "item": [{
+                    "name": "Users",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": null
+                    },
+                    "response": []
+                },
+                {
+                    "name": "UserID",
+                    "request": {
+                        "method": "GET",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/GET/user/1",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "9000",
+                            "path": [
+                                "GET",
+                                "user",
+                                "1"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "POST",
+            "item": [{
+                    "name": "AddUser",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [{
+                                    "key": "id",
+                                    "value": "4",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "name",
+                                    "value": "Marius",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "age",
+                                    "value": "23",
+                                    "type": "text"
+                                },
+                                {
+                                    "key": "job",
+                                    "value": "Soft",
+                                    "type": "text"
+                                }
+                            ]
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/POST/user",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "9000",
+                            "path": [
+                                "POST",
+                                "user"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "Lista",
+                    "request": {
+                        "method": "POST",
+                        "header": [],
+                        "body": {
+                            "mode": "urlencoded",
+                            "urlencoded": [{
+                                "key": "a",
+                                "value": "1",
+                                "type": "text"
+                            }]
+                        },
+                        "url": {
+                            "raw": "http://localhost:9000/POST/user",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "9000",
+                            "path": [
+                                "POST",
+                                "user"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "PUT",
+            "item": [{
+                    "name": "UpdateUser",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/PUT/user/42/Dinu",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "9000",
+                            "path": [
+                                "PUT",
+                                "user",
+                                "42",
+                                "Dinu"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "UpdateUserJson",
+                    "request": {
+                        "method": "PUT",
+                        "header": [],
+                        "url": null
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "DELETE",
+            "item": [{
+                    "name": "DeleteUserID",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/DELETE/user/42",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "9000",
+                            "path": [
+                                "DELETE",
+                                "user",
+                                "42"
+                            ]
+                        }
+                    },
+                    "response": []
+                },
+                {
+                    "name": "DeleteAll",
+                    "request": {
+                        "method": "DELETE",
+                        "header": [],
+                        "url": {
+                            "raw": "http://localhost:9000/DELETE/users",
+                            "protocol": "http",
+                            "host": [
+                                "localhost"
+                            ],
+                            "port": "9000",
+                            "path": [
+                                "DELETE",
+                                "users"
+                            ]
+                        }
+                    },
+                    "response": []
+                }
+            ]
+        },
+        {
+            "name": "NoPath",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+            },
+            "response": []
+        },
+        {
+            "name": "test",
+            "request": {
+                "method": "GET",
+                "header": [],
+                "url": null
+            },
+            "response": []
+        }
+    ]
 }

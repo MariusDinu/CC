@@ -72,7 +72,7 @@ module.exports.selectUsers = (res) => {
                 var response = [{
                     "message": "Nu am gasit userul! Cod 404 "
                 }];
-                res.statusCode = 400;
+                res.statusCode = 404;
                 res.setHeader('content-Type', 'Application/json');
             }
             res.end(JSON.stringify(response));
@@ -108,7 +108,7 @@ module.exports.selectUser = (res, id) => {
                 var response = [{
                     "message": "Nu am gasit userul! Cod 404 "
                 }];
-                res.statusCode = 400;
+                res.statusCode = 404;
                 res.setHeader('content-Type', 'Application/json');
             }
             res.end(JSON.stringify(response));
@@ -145,7 +145,7 @@ module.exports.deleteUser = (res, id) => {
                 var response = [{
                     "message": "Nu am gasit userul! Cod 404 "
                 }];
-                res.statusCode = 400;
+                res.statusCode = 404;
                 res.setHeader('content-Type', 'Application/json');
             }
             res.end(JSON.stringify(response));

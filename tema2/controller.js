@@ -37,7 +37,7 @@ exports.createUser = function(req, res) {
         req.on('end', function() {
             if (body != '') {
                 console.log("Body: " + body);
-                res.writeHead(200, { 'Content-Type': 'text/html' });
+                res.writeHead(201, { 'Content-Type': 'text/html' });
                 var json = qs.parse(body);
                 var name = json.name;
                 var age = json.age;
@@ -51,8 +51,8 @@ exports.createUser = function(req, res) {
             }
         });
     } else {
-        res.writeHead(500, { 'Content-Type': 'text/html' });
-        res.end('Format gresit a datelor! code 500');
+        res.writeHead(405, { 'Content-Type': 'text/html' });
+        res.end('Format gresit a datelor! code 405');
     }
 }
 
@@ -61,8 +61,8 @@ exports.createLista = function(req, res) {
     if (header === 'application/json') {
         tabelData.insertListUser(req, res);
     } else {
-        res.writeHead(500, { 'Content-Type': 'text/html' });
-        res.end('Format gresit a datelor! code 500');
+        res.writeHead(405, { 'Content-Type': 'text/html' });
+        res.end('Format gresit a datelor! code 405');
     }
 }
 
@@ -82,7 +82,7 @@ exports.noPath = function(req, res) {
     var response = [{
         "message": "Nu exista acest path! Cod 400"
     }];
-    res.statusCode = 400;
+    res.statusCode = 404;
     res.setHeader('content-Type', 'Application/json');
     res.end(JSON.stringify(response))
 

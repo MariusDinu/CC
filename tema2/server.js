@@ -6,20 +6,26 @@ var userOps = require('./controller.js');
 http.createServer(function(req, res) {
 
     const queryObject = url.parse(req.url, true).query;
-    const pathname = url.parse(req.url, true).pathname;
-
-
-
+    const path = url.parse(req.url, true).pathname;
+    console.log(path);
+    const first = "/" + path.split("/")[1];
+    const second = "/" + path.split("/")[2];
+    const pathname = first + second;
+    console.log(pathname);
+    id = path.split("/")[3];
+    console.log(id);
+    nameUser = path.split("/")[4]; // this will be 5
+    console.log(nameUser);
     // GET endpoints
     if (pathname == '/GET/users' && req.method === 'GET') {
         console.log('Request type: ' + req.method + ' Endpoint: ' + req.url);
         userOps.getUsers(req, res);
     } else
-    if (pathname == `/GET/user` && req.method === 'GET' && queryObject.id !== null && queryObject.id !== '') {
-        console.log(`ID: ${queryObject.id} Request type: ` + req.method + ' Endpoint: ' + req.url);
-        userOps.getUser(req, res, parseInt(queryObject.id));
+    if (pathname == `/GET/user` && req.method === 'GET' && id !== null && id !== '') {
+        console.log(`ID: ${id} Request type: ` + req.method + ' Endpoint: ' + req.url);
+        userOps.getUser(req, res, parseInt(id));
     } else
-    if (pathname == `/GET/user` && req.method === 'GET' && (queryObject.id == null || queryObject.id == '')) {
+    if (pathname == `/GET/user` && req.method === 'GET' && (id == null || id == '')) {
         console.log("Nu se poate cu id empty! Cod 400");
         userOps.noID(req, res);
     }
@@ -37,22 +43,22 @@ http.createServer(function(req, res) {
 
     // PUT endpoints
     else
-    if (pathname == '/PUT/user' && req.method === 'PUT' && queryObject.id !== null && queryObject.id !== '') {
+    if (pathname == '/PUT/user' && req.method === 'PUT' && id !== null && id !== '') {
         console.log('Request type: ' + req.method + ' Endpoint: ' + req.url);
-        userOps.updateUser(res, queryObject.id, queryObject.Name)
+        userOps.updateUser(res, id, nameUser);
     } else
-    if (pathname == '/PUT/users' && req.method === 'PUT' && queryObject.id !== null && queryObject.id !== '') {
+    if (pathname == '/PUT/users' && req.method === 'PUT' && id !== null && id !== '') {
         console.log('Request type: ' + req.method + ' Endpoint: ' + req.url);
         userOps.updateUsers(req, res);
     }
 
     // DELETE endpoints
     else
-    if (pathname == '/DELETE/user' && req.method === 'DELETE' && queryObject.id !== null && queryObject.id !== '') {
+    if (pathname == '/DELETE/user' && req.method === 'DELETE' && id !== null && id !== '') {
         console.log('Request type: ' + req.method + ' Endpoint: ' + req.url);
-        userOps.deleteUser(req, res, parseInt(queryObject.id))
+        userOps.deleteUser(req, res, parseInt(id))
     } else
-    if (pathname == '/DELETE/user' && req.method === 'DELETE' && (queryObject.id == null || queryObject.id == '')) {
+    if (pathname == '/DELETE/user' && req.method === 'DELETE' && (id == null || id == '')) {
         console.log("Nu se poate cu id empty! Cod 400");
         userOps.noID(req, res);
     } else
@@ -70,6 +76,9 @@ http.createServer(function(req, res) {
 
 
 }).listen(9000, (err) => {
-    if (err) console.log(err);
-    else console.log("Server running!");
+    if (err) {
+        res.statusCode = 500;
+        res.setHeader('content-Type', 'Application/json');
+        res.end("Serverul a picat! Ce ai facut?")
+    } else console.log("Server running!");
 });

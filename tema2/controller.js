@@ -93,7 +93,7 @@ exports.noID = function(req, res) {
     }];
     res.statusCode = 400;
     res.setHeader('content-Type', 'Application/json');
-    res.end(JSON.stringify(response))
+    res.end(JSON.stringify(response));
 
 }
 
